@@ -41,17 +41,29 @@ namespace Snake
             }
             else if(direction==Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if(direction==Direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
+
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
 
         public override string ToString()
