@@ -27,6 +27,14 @@ namespace Snake
             Point food = foodCreator.CreateFood();
             food.Draw();
 
+            Params settings = new Params();
+
+            Sounds sound = new Sounds(settings.GetResourceFolder());
+            sound.Play();
+
+            Sounds sound1 = new Sounds(settings.GetResourceFolder());
+            
+
             while (true)
             {
                 if(walls.IsHit(snake) || snake.IsHitTail())
@@ -37,6 +45,8 @@ namespace Snake
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
+                    sound1.PlayEat();
+
 
                 }
                 else
@@ -44,7 +54,7 @@ namespace Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(300);
                 
                 if(Console.KeyAvailable)
                 {
