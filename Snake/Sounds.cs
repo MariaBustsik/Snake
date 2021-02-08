@@ -19,7 +19,7 @@ namespace Snake
         public void Play()
         {
             player.URL=pathToMedia + "play.mp3";
-            player.settings.volume = 1;
+            player.settings.volume = 30;
             player.controls.play();
             player.settings.setMode("loop", true);
 
@@ -35,7 +35,7 @@ namespace Snake
         public void PlayEat()
         {
             player.URL = pathToMedia + "eat.mp3";
-            player.settings.volume = 300;
+            player.settings.volume = 100;
             player.controls.play();
         }
 
