@@ -50,17 +50,40 @@ namespace Snake
             return false;
         }
 
-        public void HandleKey(ConsoleKey key)
+        public void HandeKey(ConsoleKey key)
         {
-            if (key == ConsoleKey.LeftArrow)
+            if ((key == ConsoleKey.LeftArrow && direction != Direction.RIGHT) ||
+                (key == ConsoleKey.A && direction != Direction.RIGHT))
+            {
                 direction = Direction.LEFT;
-            else if (key == ConsoleKey.RightArrow)
+            }
+            else if ((key == ConsoleKey.RightArrow && direction != Direction.LEFT) ||
+                     (key == ConsoleKey.D && direction != Direction.LEFT))
+            {
                 direction = Direction.RIGHT;
-            else if (key == ConsoleKey.DownArrow)
+            }
+            else if ((key == ConsoleKey.DownArrow && direction != Direction.UP) ||
+                     (key == ConsoleKey.S && direction != Direction.UP))
+            {
                 direction = Direction.DOWN;
-            else if (key == ConsoleKey.UpArrow)
+            }
+            else if ((key == ConsoleKey.UpArrow && direction != Direction.DOWN) ||
+                     (key == ConsoleKey.W && direction != Direction.DOWN))
+            {
                 direction = Direction.UP;
+            }
+            else if (key == ConsoleKey.Escape)
+            {
+                
+                Console.Clear();             
+
+                System.Environment.Exit(0);
+
+
+            }
         }
+
+       
 
         internal bool Eat(Point food)
         {

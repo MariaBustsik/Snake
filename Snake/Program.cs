@@ -11,6 +11,8 @@ namespace Snake
         static void Main(string[] args)
         {
             Console.SetWindowSize(80, 25);
+            /*Console.BackgroundColor = ConsoleColor.White;*/
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Walls walls = new Walls (80,25);
             walls.Draw();
@@ -33,7 +35,9 @@ namespace Snake
             sound.Play();
 
             Sounds sound1 = new Sounds(settings.GetResourceFolder());
-            
+
+            Score score = new Score(0, 1);
+            score.ScoreWrite();
 
             while (true)
             {
@@ -43,9 +47,12 @@ namespace Snake
                 }
                 if(snake.Eat(food))
                 {
+                    score.ScoreUp();
+                    score.ScoreWrite();
                     food = foodCreator.CreateFood();
                     food.Draw();
                     sound1.PlayEat();
+
 
 
                 }
@@ -54,22 +61,36 @@ namespace Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(300);
+                new Speed(score.GetScore());
+
                 
-                if(Console.KeyAvailable)
+
+                if (Console.KeyAvailable)
                 {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
+
+                    snake.HandeKey(Console.ReadKey(true).Key);
                 }
                 
 
 
                /*Console.ReadLine();*/
             }
-            
+
+            Console.Clear();
+            new WriteGameOver();
+            Thread.Sleep(1500);
+            new Results(score.GetScore(), settings.GetResourceFolder());
+            Console.Clear();
+            Best best = new Best(settings.GetResourceFolder());
+
+            Thread.Sleep(2000);
+            /*new Best();*/
 
 
-             
+
+
+
+
         }
 
 
