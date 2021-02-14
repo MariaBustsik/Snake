@@ -9,12 +9,12 @@ namespace Snake
     {
         public Results(int score, string pathToResources)
         {
-            Console.Clear(); //Очищаем консоль
-            Console.WriteLine("Write onw Name or Nickname:"); //Пишем в консоли что нужно ввести ник
-            string name = Console.ReadLine(); //Переход на следующую строку и вводим имя игрока
-            StreamWriter file = new StreamWriter(pathToResources + "Results.txt", true); //Записываем файл на С диск
-            file.WriteLine(name + " - " + score + " "); // Записываем имя игрок и его счёт, через тире
-            file.Close(); //Закрываем файл
+            Console.Clear();
+            Console.WriteLine("Введите Ваше имя пользователя: ");
+            string name = Console.ReadLine();
+            StreamWriter file = new StreamWriter(pathToResources + "Results.txt", true);
+            file.WriteLine(name + ": " + score + " ");
+            file.Close();
         }
 
 

@@ -10,9 +10,11 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(80, 25);
-            /*Console.BackgroundColor = ConsoleColor.White;*/
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetWindowSize(100, 25);
+            
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.Clear();
 
             Walls walls = new Walls (80,25);
             walls.Draw();
@@ -35,6 +37,8 @@ namespace Snake
             sound.Play();
 
             Sounds sound1 = new Sounds(settings.GetResourceFolder());
+
+            Sounds sound2 = new Sounds(settings.GetResourceFolder());
 
             Score score = new Score(0, 1);
             score.ScoreWrite();
@@ -70,21 +74,19 @@ namespace Snake
 
                     snake.HandeKey(Console.ReadKey(true).Key);
                 }
-                
-
-
-               /*Console.ReadLine();*/
+               
             }
 
             Console.Clear();
             new WriteGameOver();
-            Thread.Sleep(1500);
+            sound2.PlayGameOver();
+            Thread.Sleep(2000);
             new Results(score.GetScore(), settings.GetResourceFolder());
             Console.Clear();
             Best best = new Best(settings.GetResourceFolder());
 
-            Thread.Sleep(2000);
-            /*new Best();*/
+            Thread.Sleep(10000);
+            
 
 
 

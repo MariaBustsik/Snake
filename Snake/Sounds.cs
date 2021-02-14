@@ -39,5 +39,12 @@ namespace Snake
             player.controls.play();
         }
 
+        public void PlayGameOver()
+        {
+            player.URL = pathToMedia + "over.mp3";
+            player.settings.volume = 100;
+            player.controls.play();
+        }
+
     }
 }

@@ -10,22 +10,27 @@ namespace Snake
         public int score;
         public Speed(int score)
         {
-            if (score <= 10)
+            if (score <= 9)
             {
-                Thread.Sleep(200); //Выставляем изначальную скорость
+                Thread.Sleep(200);
             }
-            else if (score >= 11 && score <= 20)
+            else if (score >= 10 && score <= 19)
             {
-                Thread.Sleep(80); // Увеличиваем скорость
+                Thread.Sleep(150);
             }
-            else if (score >= 21 && score <= 30)
+            else if (score >= 20 && score <= 29)
             {
-                Thread.Sleep(60); // Увеличиваем скорость
+                Thread.Sleep(100);
             }
-            else if (score >= 31 && score <= 40)
+            else if (score >= 30 && score <= 39)
             {
-                Thread.Sleep(40); // Увеличиваем скорость
+                Thread.Sleep(80);
             }
+            else if (score >= 40 && score <= 49)
+            {
+                Thread.Sleep(60);
+            }
+
         }
     }
 }

@@ -10,13 +10,13 @@ namespace Snake
     {
         public WriteGameOver()
         {
-            int xOffset = 25;
+            int xOffset = 35;
             int yOffset = 8;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(xOffset, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
+            WriteText("===============================", xOffset, yOffset++);
             WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 3, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
+            WriteText("===============================", xOffset, yOffset++);
             
 
 

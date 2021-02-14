@@ -13,3 +13,9 @@ Masha - 0
 фвф - 0 
 йывфыв - 0 
 Аываы - 6 
+Maria: 11 
+n: 5 
+Maria: 20 
+Artjom: 43 
+Oleg: 19 
+Oleg: 6 
