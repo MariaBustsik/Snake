@@ -19,3 +19,4 @@ Maria: 20
 Artjom: 43 
 Oleg: 19 
 Oleg: 6 
+Kirill: 25 
