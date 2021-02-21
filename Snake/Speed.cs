@@ -20,15 +20,15 @@ namespace Snake
             }
             else if (score >= 20 && score <= 29)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(125);
             }
             else if (score >= 30 && score <= 39)
             {
-                Thread.Sleep(80);
+                Thread.Sleep(100);
             }
             else if (score >= 40 && score <= 49)
             {
-                Thread.Sleep(60);
+                Thread.Sleep(80);
             }
 
         }
